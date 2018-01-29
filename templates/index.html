@@ -7,33 +7,52 @@
 <body>
 <h2>Common Crawl Index Server</h2>
 
-<a href="https://github.com/ikreymer/cc-index-server"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<a href="https://github.com/commoncrawl/cc-index-server"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
 <p>
-Please see <a href="https://github.com/ikreymer/pywb/wiki/CDX-Server-API#api-reference">CDX Server API Reference</a> for more examples on how to use the query api.
-</p>
-<p>
+Please see <a href="https://github.com/ikreymer/pywb/wiki/CDX-Server-API#api-reference">CDX Server API Reference</a> for more examples on how to use the query api.<br/>
 The <a href="https://github.com/ikreymer/cc-index-client">Common Crawl Index Client</a> provides command-line tools for using this api.
+
+</p>
+
+<p>
+<a href="http://commoncrawl.org/the-data/">Common Crawl data</a> is stored on <a href="https://aws.amazon.com/public-datasets/common-crawl/">Amazon Web Services' Public Data Sets</a>.<br/>
+Data and <a href="https://commoncrawl.s3.amazonaws.com/cc-index/collections/index.html">index files</a> are free to download &mdash; run your own index server or analyze the index offline!<br/>
+More information is found in our <a href="http://commoncrawl.org/2015/04/announcing-the-common-crawl-index/">announcement of the Common Crawl index</a>.<br/>
+For help and support, please visit the <a href="https://groups.google.com/forum/#!forum/common-crawl">Common Crawl user forum</a>.
 </p>
 
 <p style="margin-top: 30px">
-Currently available index collections:
+Currently available index collections (also as <a href="/collinfo.json">JSON list</a>):
 </p>
-<ul>
+<table class="listing">
+<thead>
+<tr>
+  <th>Search Page</th>
+  <th>Crawl</th>
+  <th>API endpoint</th>
+  <th>Index File List on<br/><code>s3://commoncrawl/</code></th>
+</tr>
+</thead>
+<tbody>
 {% for route in routes | sort(reverse=True, attribute='path') %}
   {% if route | is_wb_handler %}
-    <li style="font-size: larger">
-    <b>
-    <a href="{{ '/' + route.path }}">{{ '/' + route.path }}</a>
-    </b>
-    {% if route.user_metadata.title is defined %}
-    ({{ route.user_metadata.title }})
-    {% endif %}
-    &nbsp;&nbsp;(api endpoint: <b>/{{ route.path }}-index</b>)
-    </li>
+  <tr>
+    <td style="font-size: larger">
+      <b><a href="{{ '/' + route.path }}">{{ '/' + route.path }}</a></b>
+    </td>
+    <td>
+      {% if route.user_metadata.title is defined %}
+      {{ route.user_metadata.title }}
+      {% endif %}
+    </td>
+    <td>/{{ route.path }}-index</td>
+    <td><a href="https://commoncrawl.s3.amazonaws.com/crawl-data/{{route.path}}/cc-index.paths.gz">{{route.path}}/cc-index.paths.gz</td></td>
+  </tr>
   {% endif %}
 {% endfor %}
-</ul>
+</tbody>
+</table>
 
 <p style="margin-top: 200px">
 Powered by <a href="https://github.com/ikreymer/pywb">pywb</a>
