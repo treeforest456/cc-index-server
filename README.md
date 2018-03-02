@@ -13,9 +13,7 @@ Currently, individual indexes for each crawl can be accessed under: `s3://common
 
 Most of the index will be served from S3, however, a smaller secondary index must be installed locally for each collection.
 
-This can be done automatically by running: `install-collections.sh` which will install all available collections locally.
-
-This script will use `s3cmd` tool to sync the the index.
+This can be done automatically by running: `install-collections.sh` which will install all available collections locally. It uses the [AWS CLI](https://aws.amazon.com/cli/) tool to sync the the index.
 
 If successful, there should be  `collections` directory with at least one index.
 
