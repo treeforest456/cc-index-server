@@ -1,5 +1,5 @@
-pywb==0.33.2
-boto
+pywb>=2.5.0
+boto3
 gevent
 uwsgi
 
