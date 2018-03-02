@@ -1,4 +1,4 @@
-pywb>=0.9.5
+pywb==0.33.2
 boto
 gevent
 uwsgi

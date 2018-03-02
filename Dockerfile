@@ -15,4 +15,4 @@ RUN ./install-collections.sh
 # you may install collections locally on the host in the build directory
 # and remove this command
 
-CMD /usr/local/bin/cdx-server
+CMD /usr/local/bin/wayback
