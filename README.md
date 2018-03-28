@@ -1,6 +1,6 @@
 # Common Crawl Index Server
 
-This project is a deployment of the [pywb](https://github.com/ikreymer/pywb) web archive replay and index server to provide
+This project is a deployment of the [pywb](https://github.com/webrecorder/pywb) web archive replay and index server to provide
 an index query mechanism for datasets provided by [Common Crawl](https://commoncrawl.org)
 
 
@@ -29,9 +29,9 @@ For example, one currently available index is `CC-MAIN-2015-06` and it can be ac
 `http://localhost:8080/CC-MAIN-2015-06-index?url=commoncrawl.org`
 
 
-Refer to [CDX Server API](https://github.com/ikreymer/pywb/wiki/CDX-Server-API) for more detailed instructions on the API itself.
+Refer to [CDX Server API](https://github.com/webrecorder/pywb/wiki/CDX-Server-API) for more detailed instructions on the API itself.
 
-The pywb [README](https://github.com/ikreymer/pywb/blob/master/README.rst) provides additional information about pywb.
+The pywb [README](https://github.com/webrecorder/pywb/blob/master/README.rst) provides additional information about pywb.
 
 
 ## Building the Index
