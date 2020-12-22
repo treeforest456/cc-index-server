@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:3.9
 
 RUN apt-get -qq update && apt-get -qqy install awscli
 
