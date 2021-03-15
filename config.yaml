@@ -2,6 +2,8 @@
 #archive_paths: https://commoncrawl.s3.amazonaws.com/
 archive_paths: s3://commoncrawl/
 
+enable_auto_colls: true
+
 # suffix to add to collection for cdx api
 cdx_api_endpoint: -index
 
@@ -17,4 +19,10 @@ max_blocks: 5
 
 # disable framed replay mode
 framed_replay: false
+
+map_output_fields:
+  source: null
+  source-coll: null
+  access: null
+  charset: encoding
 

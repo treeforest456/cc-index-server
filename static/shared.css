@@ -1,6 +1,11 @@
 body {
     font-family: sans-serif;
     color: #626262;
+    padding: 20px;
+}
+
+footer {
+    padding-top: 50px;
 }
 
 li {
@@ -17,7 +22,7 @@ input[type=text] {
 }
 
 p {
-    max-width: 768px;
+    max-width: 1024px;
     font-size: 1.07rem;
     line-height: 1.6rem;
     margin-bottom: 1.3rem;
@@ -27,6 +32,9 @@ br {
     margin-bottom: 7px;
 }
 
+table {
+    width:1024px;
+}
 table.listing th,td {
     padding: 0.2em 0.5em;
 }
