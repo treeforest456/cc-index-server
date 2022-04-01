@@ -37,14 +37,8 @@ Currently available index collections (also as <a href="/collinfo.json">JSON lis
 {% for route in routes | sort(reverse=True) %}
 {% set metadata = all_metadata[route] | default({}) %}
   <tr>
-    <td style="font-size: larger">
-      <b><a href="{{ '/' + route }}">{{ '/' + route }}</a></b>
-    </td>
-    <td>
-      {% if metadata.title is defined %}
-      {{ metadata.title | replace(' Index', '') }}
-      {% endif %}
-    </td>
+    <td style="font-size: larger"><b><a href="{{ '/' + route }}">{{ '/' + route }}</a></b></td>
+    <td>{% if metadata.title is defined %}{{ metadata.title | replace(' Index', '') }}{% endif %}</td>
     <td>/{{ route }}-index</td>
     <td><a href="https://data.commoncrawl.org/crawl-data/{{route}}/cc-index.paths.gz">{{route}}/cc-index.paths.gz</td></td>
   </tr>
