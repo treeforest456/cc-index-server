@@ -1,5 +1,5 @@
 #Common-Crawl CDX Server Config
-#archive_paths: https://commoncrawl.s3.amazonaws.com/
+#archive_paths: https://data.commoncrawl.org/
 archive_paths: s3://commoncrawl/
 
 enable_auto_colls: true
@@ -11,7 +11,7 @@ enable_memento: true
 
 shard_index_loc:
     match: '.*(collections/[^/]+/)'
-    #replace: 'http://commoncrawl.s3.amazonaws.com/cc-index/\1'
+    #replace: 'http://data.commoncrawl.org/cc-index/\1'
     replace: 's3://commoncrawl/cc-index/\1'
 
 # this is also the default page size
