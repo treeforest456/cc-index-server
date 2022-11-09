@@ -7,13 +7,13 @@ an index query mechanism for datasets provided by [Common Crawl](https://commonc
 ## Usage & Installation
 To run locally, please install with `pip install -r requirements.txt`
 
-Common Crawl stores data on Amazon S3 and the index is publicly accessible from S3.
+Common Crawl stores data on Amazon S3 and the data can be accessed via s3 or https. Access to CC data using s3 api is restricted to [authenticated](https://docs.aws.amazon.com/accounts/latest/reference/credentials-access-keys-best-practices.html) AWS users.
 
-Currently, individual indexes for each crawl can be accessed under: `s3://commoncrawl/cc-index/collections/[CC-MAIN-YYYY-WW]`
+Currently, individual indexes for each crawl can be accessed under: `https://data.commoncrawl.org/commoncrawl/cc-index/collections/[CC-MAIN-YYYY-WW]` or `s3://commoncrawl/cc-index/collections/[CC-MAIN-YYYY-WW]`
 
 Most of the index will be served from S3, however, a smaller secondary index must be installed locally for each collection.
 
-This can be done automatically by running: `install-collections.sh` which will install all available collections locally. It uses the [AWS CLI](https://aws.amazon.com/cli/) tool to sync the the index.
+This can be done automatically by running: `install-collections.sh` which will install all available collections locally. It uses the [AWS CLI](https://aws.amazon.com/cli/) tool to sync the index.
 
 If successful, there should be  `collections` directory with at least one index.
 
