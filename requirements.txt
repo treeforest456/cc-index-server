@@ -1,8 +1,10 @@
 # Modified version of PyWB (pywb>=2.5.0), API compatible with PyWB 0.33.2
-git+https://github.com/commoncrawl/pywb.git@common-crawl-cdx-index#egg=pywb
+# git+https://github.com/commoncrawl/pywb.git@common-crawl-cdx-index#egg=pywb
+pywb==2.6.9
 boto3
 gevent
 uwsgi
+markupsafe==2.0.1
 
 # AWS CLI (aws s3 cp ...) is used by install-collections.sh
 # to fetch cluster.idx and metadata.yaml

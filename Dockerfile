@@ -10,7 +10,7 @@ RUN pip install -r /tmp/requirements.txt
 COPY ./ /opt/webapp/
 WORKDIR /opt/webapp
 
-RUN ./install-collections.sh
+# RUN ./install-collections.sh
 # Note: to avoid that collections are fetched anew on every image build,
 # you may install collections locally on the host in the build directory
 # and remove this command
