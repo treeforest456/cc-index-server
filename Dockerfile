@@ -8,6 +8,8 @@ RUN pip install -r /tmp/requirements.txt
 
 # Add the cc-index-server code into the image
 COPY ./ /opt/webapp/
+COPY .aws_credentials /root/.aws/credentials
+COPY .aws_config /root/.aws/config
 WORKDIR /opt/webapp
 
 # RUN ./install-collections.sh
