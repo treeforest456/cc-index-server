@@ -5,6 +5,7 @@ boto3
 gevent
 uwsgi
 markupsafe==2.0.1
+jinja2==2.9.1
 
 # AWS CLI (aws s3 cp ...) is used by install-collections.sh
 # to fetch cluster.idx and metadata.yaml
